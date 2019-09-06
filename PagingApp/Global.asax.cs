@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using PagingApp.Models;
+using System.Data.Entity;
 
 namespace PagingApp
 {
@@ -12,6 +14,7 @@ namespace PagingApp
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new MobileInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
